@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock v1</title>
+    <meta name="author" content="Plejer_">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <img class="zdj" src="tlo-zdj.jpg" alt="tło">
+        <p id="time" class="text_godz"><b>Ładuję .....</b></p>
+        <div class="text_data">
+            <p>Data Dzienna</p>
+            <p id="data" class="text_data-2"><b>Ładuję ....</b></p>
+        </div>
+    </div>
+    <script>
+        let time = document.getElementById("time");
+        setInterval(() => {
+            let d = new Date();
+            time.innerHTML = d.toLocaleTimeString();
+        }, 1000);
+
+        setInterval(() => {
+            const t = new Date();
+            document.getElementById("data").innerHTML = t.toLocaleDateString();
+        }, 1000);
+    </script>
+
+
+</body>
+
+</html>
